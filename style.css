@@ -1,4 +1,4 @@
-@import "/assets/font.css";
+@import "font.css";
 
 * {
     margin: 10;
@@ -31,30 +31,28 @@ button {
     border-radius: .4rem;
 }
 
-
 :root {
-    font-family: 'Inter Medium';
     color: var(--background);
+    --border: #0d0d0d;
     --background: #0b0b0bf3;
     --text: #e1e1e1;
     --primary: #2eb6ff;
     --secondary: #0d8794;
     --header: #21e691;
     --header-bg: #0b3145;
+    --fieldset-bg: #0c0d0f;
     --links: var(--primary);
     --selection: var(--primary);
     --highlight: var(--primary);
-
     background-color: var(--background);
-    background-image: url("2.svg");
+    background-image: url("pattern.svg");
 }
 
 body {
     border: 2px solid var(--background);
     border-radius: .4rem;
-    box-shadow: 0 0 1.5rem .5rem rgba(0, 0, 0, .1);
     max-width: 48rem;
-    min-height: 90vh;
+    min-height: 100vh;
     margin: auto;
     padding: 1rem;
     display: flex;
@@ -120,6 +118,12 @@ header {
     background: var(--background);
     border-bottom: 1px solid var(--background);
     padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+fieldset {
+    border: 2px solid var(--border);
+    background-color: var(--fieldset-bg)
 }
 
 img {
@@ -127,9 +131,9 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid var(--text);
+    max-width: 100%;
+    border: 2px solid var(--border);
     border-radius: .4rem;
-    box-shadow: 0 0 1.5rem .5rem rgba(0, 0, 0, .1);
     max-width: 100%;
 }
 
@@ -192,14 +196,16 @@ img.hidden {
 }
 
 pre {
-    overflow: auto !important;
-    padding: 1.3rem;
-    margin: 4rem -1.3rem !important;
-    border: 2px solid var(--primary);
-    border-radius: .4rem;
-    background: black;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px;
+    min-width: 0;
+    margin-bottom: 10px;
 }
 
+code {
+    font-size: 0.9rem;
+}
 
 article,
 aside,
@@ -262,4 +268,16 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+.post-card-div * {
+    position: relative;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    transition: transform 0.1s;
+    filter: drop-shadow(0 0 5.0em rgba(0, 255, 255, 0.354));
+}
+
+.post-card-div:active {
+    transform: scale(0.96);
 }

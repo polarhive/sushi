@@ -1,0 +1,21 @@
+:root {
+ --sans-font: "InterVar", sans-serif;
+ --mono-font: "JetBrains Mono", "JetBrainsMono NF", monospace;
+ font-family: var(--sans-font);
+}
+
+@supports (font-variation-settings: normal) { :root { font-family: var(--mono-font); font-optical-sizing: auto; } }
+
+@font-face {
+  font-family: "InterVar";
+  font-weight: 100 900;
+  font-style: normal;
+  src: url("Inter.var.woff2") format("woff2-variations"),
+       url("Inter.var.woff2") format("woff2");
+}
+@font-face {
+  font-family: "InterVar";
+  font-weight: 100 900;
+  font-style: italic;
+  src: url("Inter-Italic.var.woff2") format("woff2");
+}
